@@ -1,21 +1,14 @@
- 'use strict';
+'use strict';
 
- let http = require('http');
-
+let http = require('http');
 
 http.createServer((request, response) => {
-   request.on('end', () => {
-   console.log('Request method: ' + request.method);
-   console.log('Request url: ' + request.url);
-   });
-
-   let fs = require('fs');
-   let postData = '';
-
+  let fs = require('fs');
+  let postData = ''; // POST 資料
 request.on('data', (chunk) =>{
  postData += chunk;
 
-console.log(
+ console.log(
 ' 接收的 POST data ⽚段 k: [' + chunk + '].'
  );
 });
