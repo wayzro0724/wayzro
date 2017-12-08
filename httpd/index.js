@@ -3,7 +3,6 @@
 let http = require('http');
 
 const routingTable = require('./config.json');
-
 /**
 * 利⽤ http.ServerResponse 物件回傳檔案內容
 *
