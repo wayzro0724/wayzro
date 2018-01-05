@@ -41,8 +41,8 @@ const SOKOBAN = {
 let levels = [
   [
     "############",
-    "#         .#",
     "#          #",
+    "#        . #",
     "#          #",
     "#   ####   #",
     "#          #",
@@ -544,6 +544,7 @@ let sokoban = {
     this.paint();
   },
 
+
   /**
    * 貼圖函式和指令的對應表
    */
@@ -566,6 +567,9 @@ let sokoban = {
   update: function (e) {
     this.move(e);
     this.paint();
+    if (BOX == BOX_ON_GOAL && GOAL == BOX_ON_GOAL)
+
+    alert('you win');
   },
 };
 
@@ -592,9 +596,9 @@ let controlPane = (sokoban) => {
     btn.value = level;
 
     btn.addEventListener('click', e => {
+      alert('sokoban 開始');
       sokoban.start(e.target.value);
     });
-
     section.appendChild(btn);
   });
 
