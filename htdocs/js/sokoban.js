@@ -567,11 +567,17 @@ let sokoban = {
   update: function (e) {
     this.move(e);
     this.paint();
-    if (BOX == BOX_ON_GOAL && GOAL == BOX_ON_GOAL)
-
-    alert('you win');
+	game.checked:function(){
+    for(let x=0,x<this.level.length x++){
+		  for(let y=0,y<this.level[x].length y++){
+			  if((this.level[x][y]==SOKOBAN.GOAL)||(this.level[x][y]==SOKOBAN)){
+				  return false
+			  }
+            }
+       }
+  return alert('you win');
   },
-};
+
 
 /**
  * 設定關卡按鈕
