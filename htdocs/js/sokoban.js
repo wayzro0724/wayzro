@@ -559,25 +559,32 @@ let sokoban = {
     WALL: 'wall',
   },
 
+  game_clear : function (level) {
+     let height = this.level.length;
+
+    for (let x = 0; x < height; x ++) {
+      for (let y = 0; y < height; y ++) {
+
+        if (( this.level[y].charAt(x)==SOKOBAN.GOAL)||( this.level[y].charAt(x)==SOKOBAN.BOX)){
+            return false
+        };
+      };
+    };
+    return alert ('you win')
+  },
   /**
    * 遊戲更新介面函式
    *
    * @returns {undefined}
    */
-  update: function (e) {
+   
+   update: function (e) {
     this.move(e);
+   
     this.paint();
-	game.checked:function(){
-    for(let x=0,x<this.level.length x++){
-		  for(let y=0,y<this.level[x].length y++){
-			  if((this.level[x][y]==SOKOBAN.GOAL)||(this.level[x][y]==SOKOBAN)){
-				  return false
-			  }
-            }
-       }
-  return alert('you win');
+    this.game_clear();
   },
-
+};
 
 /**
  * 設定關卡按鈕
